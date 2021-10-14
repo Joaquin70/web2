@@ -34,4 +34,10 @@ class CategoryController{
     function editCategory($id, $nombre){
         $this->model->editCategory($id, $nombre);
     }
+
+    function getCategory($id_category){
+        $category = $this->model->getCategory($id_category);
+        $this->view->showCategory($category);
+        
+    }
 }

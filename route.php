@@ -48,8 +48,20 @@ switch ($params[0]) {
             case 'editCategory':
                 editCategory($params[2], $params[3]);
                 break;
-            default:
+            case 'editCategoryId':
+                Category($params[2]);
                 break;
+            case 'deleteProduct':
+                deleteProduct($params[2]);
+            break;
+            case 'addProduct':
+                addProduct($params[2], $params[3], $params[4], $params[5]);
+            break;
+
+            case 'updateProduct':
+                updateProduct($params[2], $params[3], $params[4], $params[5], $params[6]);
+            break;
+            default:
         }
         break;
     

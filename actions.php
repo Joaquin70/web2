@@ -1,5 +1,4 @@
 <?php
-require_once "dp.php";
 require_once "controller/productController.php";
 require_once "controller/categoryController.php";
 
@@ -10,9 +9,9 @@ function showHome(){
     
 }
 
-function showProducts($id_category = null){
+function showProducts(){
     $productController = new ProductController();
-    $productController->showProducts($id_category = null);
+    $productController->showProducts();
 }
 
 function showCategories(){
@@ -49,3 +48,25 @@ function editCategory($id, $nombre){
     $categoryController = new CategoryController();
     $categoryController->editCategory($id, $nombre);
 }
+
+function deleteProduct($id){
+    $productController = new ProductController();
+    $productController->deleteProduct($id);
+}
+
+function addProduct($nombre, $descripcion, $contenido, $categoria){
+    $productController = new ProductController();
+    $productController->addProduct($nombre, $descripcion, $contenido, $categoria);
+}
+
+function updateProduct($nombre, $descripcion, $contenido, $categoria, $id_producto){
+    $productController = new ProductController();
+    $productController->updateProduct($nombre, $descripcion, $contenido, $categoria, $id_producto);
+}
+
+function Category($id_category){
+    $categoryController = new CategoryController();
+    $categoryController->getCategory($id_category);
+}
+
+
